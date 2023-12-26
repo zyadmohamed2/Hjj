@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hjj/widgets/language_card_list_view.dart';
 
 class SelectLanguageScreen extends StatelessWidget {
@@ -6,7 +7,8 @@ class SelectLanguageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -21,9 +23,10 @@ class SelectLanguageScreen extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(right: 22.0, left: 22, top: 30),
+          padding: EdgeInsets.only(right: 22.0.w, left: 22.w, top: 30.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Select Language',
@@ -33,11 +36,13 @@ class SelectLanguageScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Poppins'),
               ),
+              SizedBox(height: 50.h,),
               const LanguageCardListView(),
             ],
           ),
         ),
       ),
+    ),
     );
   }
 }

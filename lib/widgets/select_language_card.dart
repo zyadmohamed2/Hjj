@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hjj/models/languages_model.dart';
 import 'package:hjj/screens/sign_in_screen.dart';
 
@@ -13,7 +14,7 @@ class SelectLanguageCard extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const SignInScreen()));
       },
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
+        padding:  EdgeInsets.only(bottom: 20.h),
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
@@ -21,9 +22,9 @@ class SelectLanguageCard extends StatelessWidget {
           color: const Color(0xffF8F8F8).withOpacity(0.47),
           child: ListTile(
             contentPadding:
-                const EdgeInsets.only(top: 10, bottom: 10, right: 31, left: 24),
+                EdgeInsets.only(top: 20.h, bottom: 20.h, right: 31.w, left: 24.w),
             leading:
-                SizedBox(height: 55, width: 55, child: Image.asset(card.image)),
+                SizedBox(height: 55.h, width: 55.w, child: Image.asset(card.image)),
             title: Text(
               card.name,
               style: const TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hjj/screens/get_started_screen.dart';
 import 'package:hjj/screens/sign_up_screen.dart';
 import 'package:hjj/widgets/custom_text_field.dart';
@@ -13,14 +14,9 @@ class SignInScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xff90CE9F),
-              Color(0xff1AB140),
-            ],
-          ),
+          image: DecorationImage(
+                image: AssetImage("assets/images/Login.png"),
+                fit: BoxFit.fill)
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -139,17 +135,24 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 30.h,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.only(top: 13, bottom: 10),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    backgroundColor: const Color(0xffFFFFFF).withOpacity(0.29)),
+              Container(
+                width: 335.w,
+                height: 48.h,
+                padding: EdgeInsets.only(
+                  top: 13.h,
+                  left: 72.w,
+                  right: 51.w,
+                  bottom: 10.h,
+                ),
+                clipBehavior: Clip.antiAlias,
+                decoration: ShapeDecoration(
+                  color: Colors.white.withOpacity(0.10000000149011612),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
