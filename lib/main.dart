@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hjj/generated/l10n.dart';
+import 'package:hjj/screens/map_screen.dart';
 import 'package:hjj/screens/select_language_screen.dart';
 import 'package:hjj/screens/sign_up_screen.dart';
+import 'package:hjj/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          locale: const Locale('ar'),
+          locale: const Locale('en'),
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          home: const SelectLanguageScreen(),
+          home: const SplashScreen(),
         );
       },
     );
