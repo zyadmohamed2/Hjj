@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hjj/screens/get_started_screen.dart';
 import 'package:hjj/screens/sign_up_screen.dart';
+import 'package:hjj/widgets/custom_password_field.dart';
 import 'package:hjj/widgets/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -14,10 +15,9 @@ class SignInScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-          image: DecorationImage(
+            image: DecorationImage(
                 image: AssetImage("assets/images/Login.png"),
-                fit: BoxFit.fill)
-        ),
+                fit: BoxFit.fill)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
@@ -42,23 +42,12 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(
                 height: 41,
               ),
-              const CustomTextField(
-                  icon: Icon(
-                    Icons.mail,
-                    color: Color(0xffBBFFCC),
-                  ),
-                  isobscure: false,
-                  label: 'Email'),
+              const CustomTextField(icon: Icon(Icons.mail), label: 'Email'),
               const SizedBox(
                 height: 19,
               ),
-              const CustomTextField(
-                icon: Icon(
-                  Icons.visibility_off,
-                  color: Color(0xffBBFFCC),
-                ),
+              CustomPasswordTextField(
                 label: 'Password',
-                isobscure: true,
               ),
               const SizedBox(
                 height: 11,

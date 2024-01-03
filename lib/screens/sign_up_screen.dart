@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hjj/screens/verification_screen.dart';
+import 'package:hjj/widgets/custom_password_field.dart';
 import 'package:hjj/widgets/custom_text_field.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -13,8 +14,9 @@ class SignUpScreen extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/images/Login.png"), fit: BoxFit.fill)
-          ),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/Login.png"),
+                  fit: BoxFit.fill)),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -45,7 +47,6 @@ class SignUpScreen extends StatelessWidget {
                     color: Color(0xffBBFFCC),
                   ),
                   label: 'Email',
-                  isobscure: false,
                 ),
                 const SizedBox(
                   height: 19,
@@ -56,29 +57,18 @@ class SignUpScreen extends StatelessWidget {
                     color: Color(0xffBBFFCC),
                   ),
                   label: 'Phone Number',
-                  isobscure: false,
                 ),
                 const SizedBox(
                   height: 19,
                 ),
-                const CustomTextField(
-                  icon: Icon(
-                    Icons.visibility_off,
-                    color: Color(0xffBBFFCC),
-                  ),
+                CustomPasswordTextField(
                   label: 'Password',
-                  isobscure: true,
                 ),
                 const SizedBox(
                   height: 19,
                 ),
-                const CustomTextField(
-                  icon: Icon(
-                    Icons.visibility_off,
-                    color: Color(0xffBBFFCC),
-                  ),
+                CustomPasswordTextField(
                   label: 'Confirm Password',
-                  isobscure: true,
                 ),
                 const SizedBox(
                   height: 11,
@@ -167,7 +157,8 @@ class SignUpScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      backgroundColor: const Color(0xffFFFFFF).withOpacity(0.29)),
+                      backgroundColor:
+                          const Color(0xffFFFFFF).withOpacity(0.29)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
